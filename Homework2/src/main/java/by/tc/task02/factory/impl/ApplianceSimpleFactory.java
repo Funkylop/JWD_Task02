@@ -2,12 +2,13 @@ package by.tc.task02.factory.impl;
 
 import by.tc.task02.entity.*;
 import by.tc.task02.entity.criteria.Criteria;
-
+import by.tc.task02.factory.DeviceFactory;
 import java.util.Map;
 
-public class ApplianceSimpleFactory{
-
-    public Appliance createDevice(Criteria criteria) {
+public class ApplianceSimpleFactory implements DeviceFactory {
+    
+    @Override
+    public Appliance createDevice(Criteria criteria)  {
         if (criteria == null) return null;
         Appliance appliance = null;
         Map<String, Object> applianceInfo = criteria.getCriteria();
